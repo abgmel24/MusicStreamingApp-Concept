@@ -1,4 +1,9 @@
-package MP4;
 public class Artist extends Account {
+    public Artist() {
+        super();
+    }
 
+    public Artist(String name) {
+        super(name);
+    }
 }
