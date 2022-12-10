@@ -34,11 +34,13 @@ public class Playlist extends ContentCollections {
     }
 
     public String toString() {
+        if(getList().size() == 0) {
+            return getTitle() + " is empty.\n";
+        }
         String s = getTitle() + " contains:\n";
         for(int i = 0; i < getList().size(); i++) {
-            s += "  " + (i+1) + ". " + getList().get(i) + "\n";
+            s += "  " + (i+1) + ". " + getList().get(i) + " \n";
         }
         return s;
     }
-    
 }

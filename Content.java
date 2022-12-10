@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Content implements Comparable<Content> {
 
     private String title;
@@ -7,11 +9,13 @@ public abstract class Content implements Comparable<Content> {
     public Content() {
         title = "default";
         artist = new Artist();
+        Driver.contentBase.add(this);
     }
 
     public Content(String title, Artist artist) {
         this.title = title;
         this.artist = artist;
+        Driver.contentBase.add(this);
     }
 
     public void playContent() {
@@ -33,6 +37,9 @@ public abstract class Content implements Comparable<Content> {
     public int getStreams() { 
         return numStreams; 
     }
+
+    @Override
+    public abstract boolean equals(Object o);
 
     @Override
     public abstract String toString();

@@ -25,7 +25,20 @@ public class Podcast extends Content {
     }
 
     public String toString() {
-        return getTitle() + " Episode: " + episodeNum;
+        return getTitle() + " Episode: " + episodeNum  + " - played " + getStreams() + " times";
+    }
+
+    public boolean isPodcast(String s, String a, int num) {
+        return getTitle().equals(s) && getArtist().getName().equals(a) && episodeNum == num;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof Podcast) {
+            Podcast p = (Podcast) o;
+            return p.getArtist().equals(getArtist()) && p.getTitle().equals(getTitle()) && p.getEpisodeNum()==episodeNum;
+        }
+        return false;
     }
     
 }

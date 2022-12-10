@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Listener extends Account {
     private Playlist favorites;
@@ -18,6 +19,8 @@ public class Listener extends Account {
     }
 
     public Playlist getFavorites() {
+
+        Collections.sort(favorites.getList());
         return favorites;
     }
 
