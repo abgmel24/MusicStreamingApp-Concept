@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public abstract class Content implements Comparable<Content> {
 
     private String title;
