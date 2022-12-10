@@ -1,4 +1,4 @@
-public class Account {
+public abstract class Account {
     private String name;
 
     public Account() {
@@ -10,6 +10,11 @@ public class Account {
     }
 
     public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
         return name;
     }
 }

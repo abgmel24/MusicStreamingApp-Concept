@@ -14,13 +14,15 @@ public abstract class Content implements Comparable<Content> {
         this.artist = artist;
     }
 
-    public void incrementStreams() {
+    public void playContent() {
         numStreams++;
-        System.out.println("Now playing: " + title);
+        System.out.println("Now playing: " + this);
     }
 
     @Override
-    public abstract int compareTo(Content c);
+    public int compareTo(Content c) {
+        return Integer.valueOf(numStreams).compareTo(c.getStreams());
+    }
     
     public String getTitle() { 
         return title; 
@@ -31,4 +33,7 @@ public abstract class Content implements Comparable<Content> {
     public int getStreams() { 
         return numStreams; 
     }
+
+    @Override
+    public abstract String toString();
 }

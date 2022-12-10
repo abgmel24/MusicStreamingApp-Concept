@@ -14,24 +14,18 @@ public class Podcast extends Content {
 
     @Override
     public int compareTo(Content c) {
-        //TODO Deal with exceptions
         if(c instanceof Podcast) {
-            Podcast s = (Podcast) c;
-            if(s.getStreams() > super.getStreams()) {
-                return 1;
-            }
-            else if(s.getStreams() < super.getStreams()) {
-                return -1;
-            }
-            else {
-                return 0;
-            }
+            return super.compareTo(c);
         }
-        return 0;
+        return -1;
     }
 
     public int getEpisodeNum() {
         return episodeNum;
+    }
+
+    public String toString() {
+        return getTitle() + " Episode: " + episodeNum;
     }
     
 }
